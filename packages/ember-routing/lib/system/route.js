@@ -1318,7 +1318,7 @@ if (Ember.FEATURES.isEnabled("query-params-new")) {
         var value = (resultsName in queryParams) ?
                     queryParams[resultsName]  :  params[resultsName];
         delete params[resultsName];
-        params[colonized.split(':').pop()] = value;
+        set(params, colonized.split(':').pop(), value);
       });
 
       return params;
